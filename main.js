@@ -33,19 +33,24 @@ list_tasks.innerHTML = "";
 
             const newtask = document.createElement('li');
             newtask.innerHTML = '';
+            newtask.className = 'newtask';
     
-            const span = document.createElement('span');
-            span.innerHTML = '';
+            const text = document.createElement('p');
+            text.innerHTML = '';
+            text.className = 'text';
 
-            newtask.innerHTML = arr[i].info;
+            text.innerHTML = arr[i].info;
 
             const btn_delete = document.createElement('button');
             btn_delete.innerHTML = "Delete";
+            btn_delete.className = 'btn_delete';
+            btn_delete.style.display = 'none';
 
             const btn_finished = document.createElement ('button');
             btn_finished.innerHTML = "Finished";
+            btn_finished.className = 'btn_finished';
 
-            newtask.appendChild(span);
+            newtask.appendChild(text);
 
             newtask.appendChild(btn_finished);
 
@@ -55,6 +60,9 @@ list_tasks.innerHTML = "";
 
             btn_finished.addEventListener ("click", () => {
                 arr[i].finished = "yes";
+                btn_finished.style.display = 'none';
+                btn_delete.style.display = 'flex';
+                text.style.textDecorationLine = 'line-through';
             })
 
             btn_delete.addEventListener("click", () => {

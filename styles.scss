@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import'mixins';
+
+header {
+    width: 100%;
+    height: 60px;
+    @include c-c;
+    background-color: rgb(156 39 176 / 80%);
+
+}
+
+.addTasks {
+    width: 100%;
+    height: 60px;
+    @include c-c;
+    column-gap: 25px;
+
+    input {
+        width: 500px;
+        height: 50px;
+        padding: 10px;
+        font-size: 16px;
+        border: solid 1px rgb(0 0 0 / 25%);
+    }
+
+    .btn_add {
+        width: 150px;
+        height: 50px;
+        @include c-c;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: rgb(156 39 176 / 80%);
+        color: white;
+        border: none;
+        // box-shadow: inset 0px 0 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 4px;
+    }
+}
+
+.list-tasks {
+    width: 100%;
+    height: auto;
+    @include c-c;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 10px;
+    list-style: none;
+
+    .newtask {
+        @include c-c;
+        width: 100%;
+        height: 60px;
+        column-gap: 25px;
+
+        .text {
+            width: 500px;
+            height: 50px;
+            border: solid 1px rgb(0 0 0 / 25%);
+            @include start-c;
+            padding-left: 10px;
+        }
+
+        .btn_delete {
+            width: 150px;
+            height: 50px;
+            @include c-c;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: red;
+            color: white;
+            border: none;
+            // box-shadow: inset 0px 0 4px 4px rgb(0 0 0 / 25%);
+            border-radius: 4px;
+        }
+        .btn_finished {
+            width: 150px;
+            height: 50px;
+            @include c-c;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #44d044;
+            color: white;
+            border: none;
+            // box-shadow: inset 0px 0 4px 4px rgb(0 0 0 / 25%);
+            border-radius: 4px;
+        }
+    }
+}
